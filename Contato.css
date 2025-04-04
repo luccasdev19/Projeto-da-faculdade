@@ -1,0 +1,9 @@
+* {
+    border: 2;
+    margin: 1;
+    padding: 1;
+}
+body {
+    background-color: whitesmoke;
+}
+h1 { text-align: center;}
