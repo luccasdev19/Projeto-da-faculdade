@@ -1,0 +1,22 @@
+* {
+    border: 2;
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+}
+body {
+background-color: whitesmoke;
+}
+header {
+    text-align: center;
+}
+button {
+    margin: 0 50px;
+}
+section {
+    display: flex;
+    justify-content: center;
+}   
+footer {
+    text-align: border;
+}
