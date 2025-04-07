@@ -1,0 +1,49 @@
+body {
+background-color: white;
+color: black;
+margin: 0;
+padding: 0;
+
+}
+header {
+    text-align: center;
+    color: black;
+    background-color:gray;
+    padding: 15px;
+    font-size: 40px;
+    margin: 0px;
+}
+button {
+    margin: 0 50px;
+    font-size: 13px;
+}
+section {
+    display: flex;
+    justify-content: center;
+}   
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    font-size: 15PX;
+}
+
+.menu {
+display: flex;
+justify-content: center;
+gap: 20px;
+
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+.pecas-inicio {
+    display: block;   
+    gap: 20px;
+    padding: 20px;
+}
+
