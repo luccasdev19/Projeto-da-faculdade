@@ -4,6 +4,13 @@
     padding: 1;
 }
 body {
-    background-color: whitesmoke;
-}
+    font-family: Arial;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
 h1 { text-align: center;}
+
+button a {
+    text-decoration: none;
+}
