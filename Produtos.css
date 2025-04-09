@@ -1,9 +1,59 @@
-* {
-    border: 2;
-    margin: 1;
-    padding: 1;
-}
 body {
-    background-color: whitesmoke;
+    font-family: Arial;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 105px;
+  }
+  
+  .produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Aumentei o gap entre os produtos */
+    justify-content: center;
+    box-shadow: none;
+  }
+  
+  .produto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 220px;
+  text-align: center;
+  padding: 15px;
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
 }
-h1 { text-align: center;}
+  
+  .produto:hover {
+    transform: translateY(-10px); /* Efeito hover (mexe quando passa o cursor) */
+  }
+  
+  .produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    border: none;
+    box-shadow: none /* sem sombra visível */
+    
+
+    /* o "box-shadow: none" serve para retirar a sombra, onde aqui determinei para tirar das imagens dos produtos */
+  }
+  
+  .produto h3 {
+    margin: 15px 0 5px;
+    font-size: 15px; /* Aumentei o tamanho da fonte */
+  }
+  
+  .produto p {
+    color: #333;
+    font-size: 18px; /* Aumentei o tamanho da fonte */
+    font-weight: bold; /* Deixei o preço mais destacado */
+  }
+  button a {
+    text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
+  }
