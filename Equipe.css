@@ -16,7 +16,12 @@ header {
 }
 .apresentacao-matheus {
     display: flex;
-    text-align: center;
+    text-align:left;
     gap: 20px;
+}
+
+button {
+    color:black;
+    background-color: white;
 }
 
