@@ -4,7 +4,7 @@
     padding: 1;
 }
 body {
-    background-color: #989898;
+    background-color: #f4f4f4;
     color: black;
 }
 h1 { text-align: center;}
@@ -13,4 +13,21 @@ h2 {
 }
 h3 {
     text-align: left;
+}
+button a {
+    text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
+  }
+  button { 
+    background-color: white ;   
+    color: black;     
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.2); 
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .voltar a {
+    text-decoration: none;
+    color: black;
 }
