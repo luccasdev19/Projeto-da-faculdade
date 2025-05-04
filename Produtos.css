@@ -71,3 +71,10 @@ body {
     text-decoration: none;
     color: black;
 }
+select {
+  color: black;
+  padding: 6px;
+  font-size: 15px;/* fonte do TAMANHO (P,M, G ou GG)*/
+  margin-top: 4px;
+  width: 45px; /*melhor tamanho de "caixinha de seleção" para não sobrar espaço ou faltar de acordo com o valor do tamanho (P,M,G ou GG)*/
+}
