@@ -10,44 +10,96 @@
 </head>
 <body>
     <div class="voltar">
-        <button> <a href="index.html">voltar</a></button>
+        <button> <a href="index.html">Voltar</a></button>
+        <br>
+        <br>
+        <br>
       </div>
+      
     <header>
         <h1>PERGUNTAS FREQUENTES (FAQ)</h1>
     </header>
     <main>
+        <section id = "faq" >
         <h2>Está com dúvidas ? </h2>
-        <br><h3>Quais são as condições para troca ou devolução? </h3>
+        <div class="faq-item">
+            <button class="faq-question">Qual o prazo de entrega do meu pedido?</button>
+            <div class="faq-answer">
+              <p>O prazo de entrega varia de acordo com a sua região e o método de envio escolhido. Geralmente, após a confirmação do pagamento, o pedido é processado em até 2 dias úteis e o prazo de entrega pode variar de 3 a 10 dias úteis.</p>
+            </div>
+          </div>
         
-        <br><h4>Deve efetuar a devolução no prazo estabelecido: </h4>
-
-        <h4>Compra online: você tem 30 dias desde a data de envio do seu pedido para receber o reembolso em um VALE TROCA. Se você deseja recebê-lo no método de pagamento original, tem 7 dias do recebimento do pedido para fazer a devolução.</h4>
-        <h4>Compra numa loja física: tem 30 dias a contar da data da compra para receber o reembolso em um VALE TROCA.</h4>
-        <h4>Os artigos devem estar no seu estado original, ter todas as etiquetas e ser apresentado o cupom ou nota fiscal.</h4>
-        <h4>É necessário fazer a devolução no mesmo mercado/região em que realizou a compra. </h4>
-
-        <br><h3>Quais são os meios de pagamento? </h3>
-
-        <h4>Em EdenClothing.com disponibilizamos as seguintes formas de pagamento. Ao processar sua compra, mostraremos as opções disponíveis para seu pedido. </h4>
-        <h4>Visa, Mastercard, AMERICAN EXPRESS, Paypal, Cartão Oferta, Apple Pay, Elo e PIX </h4>
-        <h4> Removeremos periodicamente os métodos de pagamento vencidos ou inválidos da sua conta.</h4>
-
-        <br><h3>Como rastrear uma compra?</h3>
-
-        <h4>Pode fazer o acompanhamento do seu pedido na sua conta, através da seção PEDIDOS. </h4>
-        <h4>Estes são os estados pelos quais o seu pedido passará: </h4>
-        <h4>Comprado: finalizou corretamente a compra do seu pedido. </h4>
-        <h4>Em preparação: o seu pedido está sendo preparado no armazém. </h4>
-        <h4>Pedido pronto para entrega: o pedido já saiu das nossas instalações. </h4>
-        <h4>Pedido com a Transportadora: o seu pedido está a caminho, irá recebê-lo em breve. </h4>
-        <h4>Entregue ao cliente: já recebeu o seu pedido. </h4>
-        <h4>Lembramos que receberá as atualizações do estado do seu pedido por e-mail. </h4>
-
-        <br><h3>Quais são os dados de funcionamento da loja? </h3>
-
-        <h4>Segunda á Sexta: 8h até 20h</h4>
-        <h4>Sábado e Domingo: 8h até 19h</h4>
+          <div class="faq-item">
+            <button class="faq-question">Quais são as formas de pagamento aceitas?</button>
+            <div class="faq-answer">
+              <p>Aceitamos diversas formas de pagamento, incluindo cartão de crédito (Visa, Mastercard, American Express), boleto bancário e Pix.</p>
+              <img src="Bandeiraspj.jpg" alt="bandeiras">
+            </div>
+        
+          </div>
+        
+          <div class="faq-item">
+            <button class="faq-question">Como funciona a política de troca e devolução?</button>
+            <div class="faq-answer">
+              <p>Você pode solicitar a troca ou devolução de um produto em até 7 dias corridos após o recebimento. O produto deve estar em perfeito estado, com as etiquetas originais e sem sinais de uso.</p>
+            </div>
+          </div>
+        
+          <div class="faq-item">
+            <button class="faq-question">Qual o horário de funcionamento da loja física ?</button>
+            <div class="faq-answer">
+              <p>O funcinamento da nossa loja física são dos seguintes horários:
+                <ul>
+                  <li>Segunda a Sexta: 10h às 22h</li>
+                  <li>Sábado: 9h às 21h</li>
+                  <li>Domingo: Fechado</li>
+                </ul>
+                <p>Estamos localizados na Rua dos Três Irmãos, 123 - São Paulo, SP.</p>
+              </p>
+            </div>
+          </div>
+        
+          <div class="faq-item">
+            <button class="faq-question">Os produtos têm garantia?</button>
+            <div class="faq-answer">
+              <p>Sim, todos os nossos produtos possuem garantia contra defeitos de fabricação de 30 dias a partir da data de recebimento.</p>
+            </div>
+          </div>
+        
+          <div class="faq-item">
+            <button class="faq-question">Como posso entrar em contato com o atendimento ao cliente?</button>
+            <div class="faq-answer">
+              <p>Você pode entrar em contato conosco através do nosso e-mail (atendimento@edenclhothing.com.br) ou pelo telefone (11) 93377-0487, de segunda a sexta-feira, das 9h às 20h.</p>
+            </div>
+          </div>
+        
+          </div>
+        </section>
+        
     </main>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+      
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isActive = question.classList.contains('active');
+      
+            // Fecha todos os outros itens abertos
+            faqQuestions.forEach(otherQuestion => {
+              if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                otherQuestion.classList.remove('active');
+                otherQuestion.nextElementSibling.style.display = 'none';
+              }
+            });
+      
+            question.classList.toggle('active');
+            answer.style.display = isActive ? 'none' : 'block';
+          });
+        });
+      </script>
+
     <footer></footer> 
 </body>
 </html>
