@@ -1,55 +1,98 @@
+/* Reset e base */
 * {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: white ;
-    margin: auto;
-    padding: 0;
-    text-align:initial;
-    
-
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
 }
+
+/* Cabeçalho com sua cor */
 header {
-    text-align: center;
-    background-color:#989898;
-    padding: 8rem;
-    font-size: 2.1rem;
+  background-color: #989898;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-.apresentacao-matheus {
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Container dos integrantes */
+.grupo-container {
   display: flex;
-  align-items: center;      /* Alinha verticalmente */
-  justify-content: center;  /* Centraliza no meio da tela */
-  gap: 20px;                /* Espaço entre imagem e texto */
-  max-width: 1000px;        /* maximo de espaço que um elemento pode ter*/ 
-  margin: auto;
-  padding: 20px;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
 }
 
-img {
-    width: 200px;
-  height: auto;
-  border-radius: 10px;
+/* Cartão de cada integrante */
+.integrante {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 2rem;
+  width: 260px;
+  transition: transform 0.3s;
 }
-button a {
-    text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
+
+.integrante:hover {
+  transform: scale(1.03);
+}
+
+/* Imagem do integrante */
+.integrante img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #989898;
+}
+
+/* Nome e função */
+.integrante h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.integrante h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Descrição */
+.integrante p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Rodapé com sua cor */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  x: 3rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grupo-container {
+    flex-direction: column;
+    align-items: center;
   }
-  button { 
-    background-color: white ;   
-    color: black;     
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.2); 
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .voltar a {
-    text-decoration: none;
-    color: black;
-  }
+}
