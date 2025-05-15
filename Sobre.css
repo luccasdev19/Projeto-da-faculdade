@@ -3,17 +3,56 @@
     margin: 1;
     padding: 1;
 }
+
+div {
+
+    display: inline-block;
+}
 body {
     background-color: #f4f4f4;
     color: black;
 }
-h1 { text-align: center;}
-h2 {
+
+header {
     text-align: center;
+    background-color:#989898;
+    padding: 15px;
+    font-size: 30px;
+    margin: 5px;
+  }
+
+h1 {    
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    color : white;
 }
-h3 {
-    text-align: left;
-}
+
+.container {
+    display: flex; /* Define o container como flexível */
+    align-items: center; /* Alinha verticalmente os itens ao centro (opcional) */
+  }
+  
+  .logo {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border-color: black;
+    margin-right: 50px;
+    margin-left: 20px;
+  }
+  
+  .texto {
+    font-size: 15px;
+    margin: 10px;
+    margin-left: 15px;
+    color: black;
+    text-align: justify;
+    font-family: sans-serif;
+    max-width: 600px; /* Limita a largura máxima do texto */
+  }
+
+
 button a {
     text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
   }
@@ -31,3 +70,12 @@ button a {
     text-decoration: none;
     color: black;
 }
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    x: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
