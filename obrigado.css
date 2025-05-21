@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(187, 187, 187);
+    flex-direction: column;
+}
+
+.text {
+
+    font-size: 45px;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    
+}
+
+.paragrafo {
+    color: whitesmoke;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+
+}
+
+.voltar {
+    padding: 15px 55px;
+background: #f5f5f5;
+text-decoration: none;
+color: rgb(125, 125, 125);
+font-size: 18px;
+transition: all 0.5s;
+}
+
+.voltar:hover {
+border-radius: 16px;
+}
