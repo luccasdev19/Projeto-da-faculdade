@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "nome": "Moletom triple Clothing preto",
+    "descricao": "Moletom confortável, 100% algodão",
+    "preco": 79.90,
+    "imagem": "produtos/produto1.jpeg"
+  },
+  {
+    "id": 2,
+    "nome": "Moletom triple Clothing cinza",
+    "descricao": "Moletom confortável, 100% algodão",
+    "preco": 79.90,
+    "imagem": "produtos/produto2.jpeg"
+  },
+  {
+    "id": 3,
+    "nome": "Camiseta double Clothing cinza",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto3.jpeg"
+  },
+  {
+    "id": 4,
+    "nome": "Camiseta double Clothing vermelha",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto4.jpeg"
+  },
+  {
+    "id": 5,
+    "nome": "Camiseta ÉC preta (edição limitada)",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto5.jpeg"
+  }
+  ,
+  {
+    "id": 6,
+    "nome": "Camiseta ÉC V2 Branca",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto7.jpeg"
+  }
+  ,
+  {
+    "id": 7,
+    "nome": "Camiseta ÉC V2 Verde",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto8.jpeg"
+  }
+  ,
+  {
+    "id": 8,
+    "nome": "Camiseta ÉC V2 Azul",
+    "descricao": "Camiseta confortável, 100% algodão",
+    "preco": 59.90,
+    "imagem": "produtos/produto9.jpeg"
+  }
+]

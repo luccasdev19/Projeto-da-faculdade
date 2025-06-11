@@ -13,7 +13,7 @@ body {
   .produtos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px; /* Aumentei o gap entre os produtos */
+    gap: 40px; 
     justify-content: center;
     box-shadow: none;
   }
@@ -25,11 +25,11 @@ body {
   width: 220px;
   text-align: center;
   padding: 15px;
-  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
   
   .produto:hover {
-    transform: translateY(-10px); /* Efeito hover (mexe quando passa o cursor) */
+    transform: translateY(-10px); 
   }
   
   .produto img {
@@ -38,58 +38,44 @@ body {
     border-radius: 5px;
     display: block;
     border: none;
-    box-shadow: none /* sem sombra visível */
+    box-shadow: none 
     
 
-    /* o "box-shadow: none" serve para retirar a sombra, onde aqui determinei para tirar das imagens dos produtos */
+     
   }
   
   .produto h3 {
     margin: 15px 0 5px;
-    font-size: 15px; /* Aumentei o tamanho da fonte */
+    font-size: 15px; 
   }
   
   .produto p {
     color: #333;
-    font-size: 18px; /* Aumentei o tamanho da fonte */
-    font-weight: bold; /* Deixei o preço mais destacado */
+    font-size: 18px; 
+    font-weight: bold; 
   }
   
-  button a {
-    text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
-  }
-  button {
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: 0;
-    background-color: rgb(0, 0, 0);
-    letter-spacing: 1.5px;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: rgb(125, 125,125 )0px 10px 0px 0px;
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-  }
-  
-  button:hover {
-    box-shadow: rgb(125, 125, 125) 0px 7px 0px 0px;
-  }
-  
-  button:active {
-    background-color: rgb(125, 125, 125);
-    /*50, 168, 80*/
-    box-shadow: rgb(125, 125, 125) 0px 0px 0px 0px;
-    transform: translateY(5px);
-    transition: 700ms;
-  }
-  .voltar a {
-    text-decoration: none;
-    color: whitesmoke;
+ .btn-container {
+    text-align: left; 
+    margin: 20px 0;
 }
-select {
-  color: black;
-  padding: 6px;
-  font-size: 15px;/* fonte do TAMANHO (P,M, G ou GG)*/
-  margin-top: 4px;
-  width: 45px; /*melhor tamanho de "caixinha de seleção" para não sobrar espaço ou faltar de acordo com o valor do tamanho (P,M,G ou GG)*/
+
+.btn-voltar {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #333;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-voltar:hover,
+.btn-voltar:focus {
+    background-color: #36332f;
+    color: white;
+    outline: none;
+    transform: scale(1.05);
 }

@@ -105,41 +105,27 @@ form button:hover {
     border-radius: 16px;
 }
 
-button a {
-    text-decoration: none; /*  usado para tirar o sublinhado do conteúdo do button*/
-    
-  }
-  button {
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: 0;
-    background-color: rgb(0, 0, 0);
-    letter-spacing: 1.5px;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: rgb(125, 125,125 )0px 10px 0px 0px;
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-    
-  
-  }
-  
-  button:hover {
-    box-shadow: rgb(125, 125, 125) 0px 7px 0px 0px;
-  }
-  
-  button:active {
-    background-color: rgb(125, 125, 125);
-    /*50, 168, 80*/
-    box-shadow: rgb(125, 125, 125) 0px 0px 0px 0px;
-    transform: translateY(5px);
-    transition: 700ms;
-  }
-  .voltar a {
-    text-decoration: none;
-    color: white;
+.btn-container {
+    text-align: left; /* Alinha à esquerda */
+    margin: 20px 0;
 }
 
+.btn-voltar {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #333;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
 
-
-
+.btn-voltar:hover,
+.btn-voltar:focus {
+    background-color: #36332f;
+    color: white;
+    outline: none;
+    transform: scale(1.05);
+}

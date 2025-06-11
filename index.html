@@ -1,44 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-br"></html>
-    <head>
-    <title>Éden Clothing® - Home</title>
-    <meta name="description" content="Mudando a Forma como Você se Veste" charset="UTF8">
-    <meta name="viewport" content="width-devide-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index-home.css">
-    <link rel="icon" type="image/png" href="eden.icon.png">
-    </head>
-    <body>
-    <header> <!-- inicio do cabeçalho-->
-    <div class="cabecalho">
-    <h1>ÉDEN CLOTHING</h1>
-    <p><i>Mudando a Forma como Você se Veste</i></p>
-    </div>
-    </header> <!-- Fim do cabeçalho-->
-    <main>
-    <section> <!--menu de navegação-->
-        <div class="menu">
-            <h2><button><a href="Produtos.html" target="aba1">Produtos</a></button></h2> 
-            <h2><button><a href="Galeria.html" target="aba2">Galeria</a></button></h2>
-            <h2><button><a href="Equipe.html" target="aba3">Equipe</a></button></h2> 
-            <h2><button><a href="Detalhes do Produto.html" target="aba4">Detalhes do Produto</a></button></h2> 
-            <h2><button><a href="Sobre.html" target="aba5">Sobre</a></button></h2>
-            <h2><button><a href="Contato.html" target="aba6">Contato</a></button></h2>
-            <h2><button><a href="Perguntas Frequentes (FAQ).html" target="aba7">Perguntas Frequentes (FAQ)</a></button></h2>
-        </div>
-    </section> <!--fim do menu-->    
-    <section>
-        <div class="apresentacao"> <!-- Apresentação do site-->
-            <h2>Bem-vindos a Éden Clothing® </h2>
-            <p>Na Éden Clothing, acreditamos que o essencial nunca sai de moda. Nossas camisetas básicas são feitas para quem valoriza conforto, qualidade e estilo no dia a dia.</p>
-            <p>Explore nossa coleção minimalista e descubra como o simples pode ser poderoso. Com cortes modernos e cores versáteis, nossas peças são ideais para todas as ocasiões e combinações.</p> 
-            <h2>Vamos dar uma olhada na nossa coleção? </h2>
-            <p> Explore nossa coleção exclusiva com peças no estilo Insider — conforto, tecnologia e design feitos especialmente para o público masculino. </p> <!-- Apresentação do site-->
-        </div>
-    </section>  
-    </main>
-    <footer>
-        <p><i>Todos os diretos reservados (2025)®</i></p>
-    </footer>
-    </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Mudando a Forma como Você se Veste" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Éden Clothing® - Home</title>
+  <link rel="stylesheet" href="index-home.css" />
+  <link rel="icon" type="image/png" href="eden.icon.png" />
+</head>
+<body>
 
+  <header>
+  <div class="header-container">
+    <img src="eden.icon sem fundo.png" alt="iconeSemFundo">
+
+    <nav class="menu" role="navigation" aria-label="Menu principal">
+      <ul>
+        <li><a href="Produtos.html">Produtos</a></li>
+        <li><a href="Galeria.html">Galeria</a></li>
+        <li><a href="Equipe.html">Equipe</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="apresentacao" aria-label="Apresentação da marca"></section>
+
+    <section class="carousel-container" aria-label="Carrossel de produtos">
+      <button class="carousel-btn prev" aria-label="Slide anterior">‹</button>
+
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="carrosel/banner 1.png" alt="Produto 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="carrosel/Banner 2.png" alt="Produto 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="carrosel/Banner 3.png" alt="Produto 3" />
+        </div>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Próximo slide">›</button>
+
+      <div class="carousel-indicators" role="tablist" aria-label="Indicadores do carrossel">
+        
+      </div>
+    </section>
+<h2>Bem-vindos a Éden Clothing®</h2>
+<p>Na Éden Clothing, acreditamos que o essencial nunca sai de moda. Nossas camisetas básicas são feitas para quem valoriza conforto, qualidade e estilo no dia a dia.</p>
+<div id="produtos-container"></div>
+    <section class="apresentacao" aria-label="Apresentação da marca">
+      <h2>Bem-vindos a Éden Clothing®</h2>
+      <p>Na Éden Clothing, acreditamos que o essencial nunca sai de moda. Nossas camisetas básicas são feitas para quem valoriza conforto, qualidade e estilo no dia a dia.</p>
+      <p>Explore nossa coleção minimalista e descubra como o simples pode ser poderoso. Com cortes modernos e cores versáteis, nossas peças são ideais para todas as ocasiões e combinações.</p>
+      <h2>Vamos dar uma olhada na nossa coleção?</h2>
+      <p>Explore nossa coleção exclusiva com peças no estilo Insider — conforto, tecnologia e design feitos especialmente para o público masculino.</p>
+    </section>
+
+    <section class="faq" aria-label="Perguntas frequentes">
+      <h2>Perguntas Frequentes</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="q1">
+          <span>Quais formas de pagamento vocês aceitam?</span>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="faq1" class="faq-answer" role="region" aria-labelledby="q1" hidden>
+          <p>Aceitamos cartão de crédito, débito, Pix e boleto bancário.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="q2">
+          <span>Quanto tempo leva para o pedido chegar?</span>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="faq2" class="faq-answer" role="region" aria-labelledby="q2" hidden>
+          <p>O prazo de entrega varia de 3 a 7 dias úteis dependendo da sua região.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="q3">
+          <span>Posso trocar um produto?</span>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="faq3" class="faq-answer" role="region" aria-labelledby="q3" hidden>
+          <p>Sim! Você pode trocar dentro de 7 dias após o recebimento.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="q3">
+          <span>Os produtos são originais e têm garantia?</span>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="faq4" class="faq-answer" role="region" aria-labelledby="q3" hidden>
+          <p>Sim, todos os nossos produtos são 100% originais e acompanham garantia de fábrica conforme o fornecedor.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="q3">
+          <span>Quais formas de pagamento vocês aceitam?</span>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="faq5" class="faq-answer" role="region" aria-labelledby="q3" hidden>
+          <p>Aceitamos cartões de crédito, boleto bancário, Pix e pagamentos via plataformas como PayPal e Mercado Pago.</p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p><em>Todos os direitos reservados (2025)®</em></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

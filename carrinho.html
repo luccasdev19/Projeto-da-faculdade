@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrinho</title>
+  <style>
+    .btn-voltar-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .btn-voltar-home:hover {
+      background-color: #3a3434;
+      color: #f8f7f7;
+      transform: scale(1.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+    }
+
+    #carrinho-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .item-carrinho {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .item-carrinho:last-child {
+      border-bottom: none;
+    }
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-info strong {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .item-info span {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .btn-remover {
+      background: transparent;
+      border: none;
+      color: #e40f0f;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .btn-remover:hover {
+      color: #b40808;
+    }
+
+    .totais {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .totais p {
+      margin-bottom: 8px;
+    }
+
+    #finalizar-compra {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #4f575f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(19, 20, 20, 0.3);
+    }
+
+    #finalizar-compra:hover {
+      background-color: #34393f;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <a href="index.html" class="btn-voltar-home">← Voltar para Home</a>
+
+  <h1>Carrinho</h1>
+  <div id="carrinho-container"></div>
+
+  <div class="totais">
+    <p><strong>Total de produtos:</strong> <span id="total-produtos">0</span></p>
+    <p><strong>Valor total:</strong> R$ <span id="valor-total">0.00</span></p>
+  </div>
+
+  <button id="finalizar-compra">Finalizar Compra</button>
+
+  <script>
+    let produtos = []; 
+
+    
+    async function carregarProdutos() {
+      try {
+        const response = await fetch('produtos.json'); 
+        if (!response.ok) throw new Error('Erro ao carregar produtos.json');
+        produtos = await response.json();
+        mostrarCarrinho();
+      } catch (error) {
+        alert('Erro ao carregar produtos: ' + error.message);
+      }
+    }
+
+    function pegarCarrinho() {
+      const carrinhoJSON = localStorage.getItem('carrinho');
+      return carrinhoJSON ? JSON.parse(carrinhoJSON) : [];
+    }
+
+    function salvarCarrinho(carrinho) {
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+
+    function mostrarCarrinho() {
+      if (!produtos.length) {
+      
+        return;
+      }
+      const carrinho = pegarCarrinho();
+      const container = document.getElementById('carrinho-container');
+      container.innerHTML = '';
+
+      let totalProdutos = 0;
+      let valorTotal = 0;
+
+      carrinho.forEach(item => {
+        const produto = produtos.find(p => p.id === item.id);
+        if (!produto) return;
+
+        const subtotal = produto.preco * item.quantidade;
+        totalProdutos += item.quantidade;
+        valorTotal += subtotal;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item-carrinho');
+        itemDiv.innerHTML = `
+          <div class="item-info">
+            <strong>${produto.nome}</strong>
+            <span>Quantidade: ${item.quantidade}</span>
+            <span>Subtotal: R$ ${subtotal.toFixed(2)}</span>
+          </div>
+          <button class="btn-remover" data-id="${produto.id}">Remover</button>
+        `;
+
+        container.appendChild(itemDiv);
+      });
+
+      document.getElementById('total-produtos').textContent = totalProdutos;
+      document.getElementById('valor-total').textContent = valorTotal.toFixed(2);
+
+      document.querySelectorAll('.btn-remover').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.getAttribute('data-id'));
+          removerDoCarrinho(id);
+        });
+      });
+    }
+
+    function removerDoCarrinho(produtoId) {
+      let carrinho = pegarCarrinho();
+      carrinho = carrinho.filter(item => item.id !== produtoId);
+      salvarCarrinho(carrinho);
+      mostrarCarrinho();
+    }
+
+    document.getElementById('finalizar-compra').addEventListener('click', () => {
+      const carrinho = pegarCarrinho();
+      if (carrinho.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+      }
+      alert('Compra finalizada com sucesso!');
+      localStorage.removeItem('carrinho');
+      mostrarCarrinho();
+    });
+
+    window.onload = carregarProdutos;
+  </script>
+</body>
+</html>
+
+
+
+
